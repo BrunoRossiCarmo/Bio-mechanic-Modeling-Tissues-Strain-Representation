@@ -50,22 +50,3 @@ for cont in range(-40, 40):
     FO = H - m*a
     # Atualizando demais parâmetros
     atuador.pos = vector(-(compr/2)+(x-0.0002),FO, W)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
