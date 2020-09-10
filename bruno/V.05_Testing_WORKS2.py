@@ -24,11 +24,10 @@ W = 0.02 # em metros
 
 # Propriedades Iniciais:
 e = 10000           #Módulo de Young (kPa)
-T = 0
-E = 0
+E = 0               #Deformação
 
 # Parâmetros para movimento do atuador:
-F = 0 
+F = 0           #Força do Atuador
 I = H           #Posição Inicial
 Ly = I          #Deslocamento pelo eixo Y.
 
