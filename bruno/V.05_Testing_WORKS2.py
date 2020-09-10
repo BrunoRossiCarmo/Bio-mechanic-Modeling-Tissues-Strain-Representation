@@ -40,8 +40,8 @@ bloco = box(pos = vector(0, 0, 0), size = vector(L, H, W), color = color.blue);
 atuador = cylinder(pos=vector(0, 0.01 ,0), axis=vector(0,5,0), radius=0.020, size = vector(L, 0.001, W), color = color.red)
 
 # Caixas de texto.
-forceL=label(pos = vec(0,0.06,0), text = 'E = %1.1f N' %(E))
-tensaoL=label(pos = vec(0.07,0.06,0), text = 'Tensao = %1.1f ' %(T))
+forceL=label(pos = vec(0,0.06,0), text = 'E = %1.1f N' %(e))
+tensaoL=label(pos = vec(0.07,0.06,0), text = 'Tensao = %1.1f ' %(S))
 deformaL=label(pos = vec(-0.07,0.06,0), text = 'Desloc. = %1.1f ' %(E))
 
 # Definindo a plataforma de apoio de nosso bloco.
