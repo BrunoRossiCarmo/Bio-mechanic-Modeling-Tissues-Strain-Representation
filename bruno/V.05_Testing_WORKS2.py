@@ -65,9 +65,7 @@ for cont in range(0, 18):
     # Compressão do Bloco:
     bloco.size = vector(L + F, (H - F), W + 2*(F))   #Compressão em (X, Y, Z) de acordo com Coef. Poiss.
     bloco.pos = vector(0,-F/2 ,0)
-    
-    # Nova posição de acordo com a Tensão/Deformação:
-    
+  
     # Atualizando demais parâmetros
     pointer.pos = vector(0.05, 0.05 - F ,0)
     forceL.text = 'E = %1.0f N' %(e)
@@ -75,12 +73,3 @@ for cont in range(0, 18):
     deformaL.text = 'Deform. = %1.2f ' %(E)
     # Representar a movimentação de modo devagar
     time.sleep(0.4)
-
-    
-
-
-# In[ ]:
-
-
-
-
