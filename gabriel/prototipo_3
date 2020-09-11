@@ -1,0 +1,75 @@
+from numpy import *
+from vpython import *
+from matplotlib import *
+import matplotlib.pyplot as plt 
+import time
+
+#PROPRIEDADES ELASTICAS DO CILINDRO (?)
+F = 5 #N. Positivo, portanto orientada no eixo positivo de y, com o ojetivo de tensionar
+m = 0.01 #Kg
+x = 0.1 #m
+k = 80 #N/m
+x1 = x + F/k
+F1 = -5#N. Negativo, ou seja vai comprimir o objeto ao seu tamanho natural
+
+#mostrar a força
+pointer = arrow(pos=vector(1.5,3,1.5), axis=vector(0,4,0), shaftwidth=0, color=color.cyan)
+
+#caixas de texto
+forceL=label(pos = vec(3,1,0), text = 'Força = %1.1f N' %(F))
+springConstant=label(pos = vec(1,0.06,0), text = 'k = %d N/m' %(k))
+positionL=label(pos = vec(-2,0.06,0), text = 'x = %1.3f m' %(x1-x))
+
+#criação cilindro
+rod = cylinder(pos=vector(0,0,0),axis=vector(0,3+x,0),radius=0.5-x)
+#foi criado um cilindro q começa em x=0, y=0, z=0 e foi alongado em y até a posição 3,
+#portanto, ele termina em (0,3,0)
+rod.color=vector(0,0,1) #cor azul pois no RGB, B is True
+
+#criação base
+floor=box(pos=vector(0,0,0),size=vector(9,0.1,9))#uma caixa bem fininha eh o chão
+floor.color=color.gray(0.5)#cinza
+
+#criação apurador
+rodc = cylinder(pos=vector(0,0,0),axis=vector(0,0.1,0),radius=0.6)
+rodc.pos = vector(0,3,0)
+rodc.color=vector(1,1,0)
+
+#Graficos
+plt.ion()
+
+#Movimento
+
+#Tensão
+for cont in range(-150, 150):
+    rate(300)
+    #Incremento na força
+    F = F + 0.1
+    # Nova posição de acordo com a lei de Hooke
+    x1 = x + F/k;
+    # Atualizando demais parâmetros
+    forceL.text = 'Força = %1.1f N' %(F)
+    positionL.text = 'x = %1.3f m' %(x1-x)
+    rod.axis = vector(0, 3+x1, 0)
+    rod.radius = 0.5-x1 
+    rodc.pos = vector(0,3+x1,0)
+    pointer.axis = vector(0, x1, 0)  
+    
+#Compreensão
+#for cont in range (-2,2):
+    #rate(300)
+    #Decremento da Força
+    #F1 = F1 - 0.1
+    #Nova posição de acordo com a Leio de Hooke
+    #x1 = x1 + F/k
+    #Atualizando...
+    #forceL.text = 'Força = %1.1f N' %(F1)
+    #positionL.text = 'x = %1.3f m' %(x1-x)
+    #rod.axis = vector(0, 3-x1, 0)
+    #rod.radius = x1-0.5
+    #rodc.pos = vector(0,3-x1,0)
+    #pointer.axis = vector(0, x-x1, 0)
+    
+
+    
+   
