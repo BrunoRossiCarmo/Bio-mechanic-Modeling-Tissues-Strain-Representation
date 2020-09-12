@@ -1,0 +1,77 @@
+from numpy import *
+from vpython import *
+from matplotlib import *
+import matplotlib.pyplot as plt 
+import time
+
+#PROPRIEDADES ELASTICAS DO CILINDRO (?)
+F = 5 #N. Positivo, portanto orientada no eixo positivo de y, com o ojetivo de tensionar
+m = 0.01 #Kg
+x = 0.1 #m
+k = 80 #N/m
+x1 = x + F/k
+F1 = -5#N. Negativo, ou seja vai comprimir o objeto ao seu tamanho natural
+
+#mostrar a força
+pointer = arrow(pos=vector(1.5,1.5,1.5), axis=vector(0,4,0), shaftwidth=0, color=color.cyan)
+
+#criação cilindro
+rod = cylinder(pos=vector(0,0,0),axis=vector(0,3+x,0),radius=0.5-x)
+#foi criado um cilindro q começa em x=0, y=0, z=0 e foi alongado em y até a posição 3,
+#portanto, ele termina em (0,3,0)
+rod.color=vector(0,0,1) #cor azul pois no RGB, B is True
+T = F/rod.radius
+D = (x1-x)/x
+E = T/D
+
+#caixas de texto
+forceL=label(pos = vec(3,1,0), text = 'Tensão = %1.1f N' %(F))#Forçã Tensão
+strainposition=label(pos = vec(-3,0.06,0), text = 'Deformação = %1.3f m' %(D))
+young=label(pos = vec(1,0.06,0), text = 'E = %1.3f Pa' %(E))
+
+#criação base
+floor=box(pos=vector(0,0,0),size=vector(9,0.1,9))#uma caixa bem fininha eh o chão
+floor.color=color.gray(0.5)#cinza
+
+#criação apurador
+rodc = cylinder(pos=vector(0,0,0),axis=vector(0,0.1,0),radius=0.6)
+rodc.pos = vector(0,3,0)
+rodc.color=vector(1,1,0)
+
+#Graficos
+
+# Arrays para o gráfico
+deformacao = []
+tensao = []
+
+plt.ion()#tempo real
+def makeFig():#função de plotar
+    plt.plot(deformacao, tensao)#plotar tensão por deformação do cilindro
+    plt.xlabel('ɛ')
+    plt.ylabel('σ (Pa')
+    plt.title('Ensaio Mecânico')
+    
+#Movimento
+#Tensão
+for cont in range(-50, 50):
+    #Incremento na força
+    F = F + 0.1
+    # Nova posição de acordo com a lei de Hooke
+    x1 = x + F/k;
+    # Atualizando demais parâmetros
+    forceL.text = 'Tensão = %1.1f N' %(F)
+    rod.axis = vector(0, 3+x1, 0)
+    rod.radius = 0.5-x1 
+    T = F/rod.radius
+    D = (x1-x)/x
+    E = T/D
+    strainposition.text = 'Deformação = %1.3f ' %(D)
+    young.text = 'E = %1.3f Pa' %(abs(E))
+    rodc.pos = vector(0,3+x1,0)
+    pointer.axis = vector(0, D, 0)  
+    tensao.append(T) 
+    deformacao.append(D)
+    makeFig()
+    time.sleep(0.005)
+
+    
