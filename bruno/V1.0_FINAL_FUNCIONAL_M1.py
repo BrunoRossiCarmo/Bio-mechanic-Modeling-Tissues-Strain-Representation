@@ -98,10 +98,3 @@ for cont in range(0, 18):
     time.sleep(0.3)
 
     
-
-
-# In[ ]:
-
-
-
-
