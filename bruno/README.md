@@ -2,7 +2,7 @@
 
 Hello guys! Here I dropped all of the files since I started to develop this work. The last two files (V1.0_M1 E V1.0_M2) are the files about two tissue with different conformation, so they are the final files on our 3D representation.
 
-*Olá amigos! Eu coloquei aqui alguns dos arquivos, inclusive os dois últimos arquivos são os arquivos finais por enquanto mostrando duas diferentes conformações teciduais.
+*Olá amigos! Eu coloquei aqui alguns dos arquivos, inclusive os dois últimos arquivos são os arquivos finais por enquanto mostrando duas diferentes conformações teciduais.*
 
 # V1.0_M1:
 
