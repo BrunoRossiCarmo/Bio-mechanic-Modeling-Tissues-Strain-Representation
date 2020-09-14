@@ -4,4 +4,4 @@ Hello guys! Here I dropped all of the files since I started to develop this work
 
 # V1.0_M1:
 
-This file shows a 3D representation of a tissue being compressed by some actuator. By this way, we use to calculate the Stress and Strain by the information of this tissue, representing a elastic tissue with poisson's ratio equal to 0.5 and Young's Module equals to 10000kPa. 
+This file shows a 3D representation of a tissue being compressed by an actuator. In this way, we use to calculate the Stress and Strain by the information of this tissue, representing an elastic tissue with poisson's ratio equal to 0.5 and Young's Module equals to 10000kPa. 
