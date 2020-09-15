@@ -25,7 +25,7 @@ W = 0.02 # em metros
 # Propriedades Iniciais:
 e = 10000           #Módulo de Young (kPa)
 E = 0               #Deformação
-F = 0               #Força Atuador
+M = 0               #Movimento Atuador
 S = 0               #Stress
 
 # Parâmetros para movimento do atuador:
@@ -66,7 +66,7 @@ def makeFig():
 #Movimento de Compressão:
 for cont in range(0, 18):
     # Incremento na força
-    F = F + 0.0005    #Por conta de nossas medidas, se trata de 0.0005kN
+    M = M + 0.0005    #Movimentação de 0.0005.
     
     # Parametros atualizados:
     Ly = Ly + 0.0005               #Deslocamento Y total = 0.009
@@ -74,17 +74,17 @@ for cont in range(0, 18):
     S = E*e*exp(-5*E)                        #Estresse (Tensão)
     
     # Movimento do Atuador:
-    atuador.pos = vector(0, 0.01 - F,0)
+    atuador.pos = vector(0, 0.01 - M,0)
     
     # Compressão do Bloco:
-    bloco.size = vector(L + F, (H - F), W + 2*(F))   #Compressão em (X, Y, Z) de acordo com Coef. Poiss.
-    bloco.pos = vector(0,-F/2 ,0)
+    bloco.size = vector(L + M, (H - M), W + 2*(M))   #Compressão em (X, Y, Z) de acordo com Coef. Poiss.
+    bloco.pos = vector(0,-M/2 ,0)
     
     # Posição da Seta:
-    pointer.pos = vector(0.05, 0.05 - F ,0)
+    pointer.pos = vector(0.05, 0.05 - M ,0)
     
     # Atualizando demais parâmetros
-    pointer.pos = vector(0.05, 0.05 - F ,0)
+    pointer.pos = vector(0.05, 0.05 - M ,0)
     forceL.text = 'E = %1.0f N' %(e)
     tensaoL.text = 'Tensao = %1.0f N ' %(S*-1)      #Seu valor deve ser apresentado em módulo.
     deformaL.text = 'Deform. = %1.2f ' %(E*-1)      #Seu valor deve ser apresentado em módulo.
@@ -95,13 +95,6 @@ for cont in range(0, 18):
     drawnow(makeFig)  
     
     # Representar a movimentação de modo devagar
-    time.sleep(0.3)
+    time.sleep(0.1)
 
     
-
-
-# In[ ]:
-
-
-
-
