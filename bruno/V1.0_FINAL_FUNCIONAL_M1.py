@@ -74,11 +74,11 @@ for cont in range(0, 18):
     S = E*e                        #Estresse (Tensão)
     
     # Movimento do Atuador:
-    atuador.pos = vector(0, 0.01 - F,0)
+    atuador.pos = vector(0, 0.01 - M,0)
     
     # Compressão do Bloco:
     bloco.size = vector(L + M, (H - M), W + 2*(M))   #Compressão em (X, Y, Z) de acordo com Coef. Poiss.
-    bloco.pos = vector(0,-F/2 ,0)
+    bloco.pos = vector(0,-M/2 ,0)
     
     # Posição da Seta:
     pointer.pos = vector(0.05, 0.05 - M ,0)
