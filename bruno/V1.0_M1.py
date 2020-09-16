@@ -57,7 +57,7 @@ Strain = []
 # Gráficos do Matlib
 plt.ion() 
 def makeFig():
-    plt.plot(Strain, Stress, 'ro-')       #plotar força por posição do bloco
+    plt.plot(Strain, Stress, 'bo-')       #plotar força por posição do bloco
     plt.xlabel('Strain')
     plt.ylabel('Stress')
     plt.title('Stress/Strain Plot')
