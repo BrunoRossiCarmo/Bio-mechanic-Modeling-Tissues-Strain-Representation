@@ -45,7 +45,7 @@ tensaoL=label(pos = vec(0.07,0.06,0), text = 'Tensao = %1.1f ' %(0))
 deformaL=label(pos = vec(-0.07,0.06,0), text = 'Desloc. = %1.1f ' %(E))
 
 # Definindo a plataforma de apoio de nosso bloco.
-ground = box(pos = vector(0, -(H/2) , 0), size = vector(0.2, 0.001, 0.1))
+ground = box(pos = vector(0, -(H/2) , 0), size = vector(0.2, 0.001, 0.1), color = color.white)
 
 # Seta que indica a força
 pointer = arrow(pos=vector(0.05, 0.05 ,0),  axis = vector(0, -0.02, 0), shaftwidth = 0, color = color.red)
