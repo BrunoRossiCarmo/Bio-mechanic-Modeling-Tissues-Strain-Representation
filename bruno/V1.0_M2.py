@@ -66,12 +66,12 @@ def makeFig():
 #Movimento de Compressão:
 for cont in range(0, 18):
     # Incremento na força
-    M = M + 0.0005    #Movimentação de 0.0005.
+    M = M + 0.00034    #Movimentação de 0.0005.
     
     # Parametros atualizados:
-    Ly = Ly + 0.0005               #Deslocamento Y total = 0.009
-    E = (I-Ly)/Ly                  #Deformação
-    S = E*e*exp(-5*E)                        #Estresse (Tensão)
+    Ly = Ly + 0.00034               #Deslocamento Y 
+    E = (I-Ly)/I                    #Deformação
+    S = E*e*exp(-5*E)               #Estresse (Tensão)
     
     # Movimento do Atuador:
     atuador.pos = vector(0, 0.01 - M,0)
