@@ -95,6 +95,6 @@ for cont in range(0, 18):
     drawnow(makeFig)  
     
     # Representar a movimentação de modo devagar
-    time.sleep(0.02)
+    time.sleep(0.005)
 
     
