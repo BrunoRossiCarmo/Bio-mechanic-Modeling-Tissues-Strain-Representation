@@ -70,7 +70,7 @@ for cont in range(0, 18):
     
     # Parametros atualizados:
     Ly = Ly + 0.0005               #Deslocamento Y total = 0.009
-    E = (I-Ly)/Ly                  #Deformação
+    E = (I-Ly)/I                  #Deformação
     S = E*e                        #Estresse (Tensão)
     
     # Movimento do Atuador:
