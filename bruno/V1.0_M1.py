@@ -34,10 +34,10 @@ Ly = I          #Deslocamento pelo eixo Y.
 
 canvas()
 # Definindo o material (bloco).
-bloco = box(pos = vector(0, 0, 0), size = vector(L, H, W), color = color.blue);
+bloco = box(pos = vector(0, 0, 0), size = vector(L, H, W), color = color.yellow);
 
 # Definindo o atuador que irá realizar a compressão do material.
-atuador = cylinder(pos=vector(0, 0.01 ,0), axis=vector(0,5,0), radius=0.020, size = vector(L, 0.001, W), color = color.red)
+atuador = cylinder(pos=vector(0, 0.01 ,0), axis=vector(0,5,0), radius=0.020, size = vector(L, 0.001, W), color = color.green)
 
 # Caixas de texto.
 forceL=label(pos = vec(0,0.06,0), text = 'E = %1.1f N' %(e))
