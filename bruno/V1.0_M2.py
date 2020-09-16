@@ -23,7 +23,7 @@ H = 0.02 # em metros
 W = 0.02 # em metros
 
 # Propriedades Iniciais:
-e = 10000           #Módulo de Young (Pa)
+e = 8000            #Módulo de Young (Pa)
 E = 0               #Deformação
 M = 0               #Movimento Atuador
 S = 0               #Stress
