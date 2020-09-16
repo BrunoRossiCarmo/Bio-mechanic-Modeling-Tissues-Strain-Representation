@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt #import matplotlib library
 from drawnow import *
 import time
 
+
 m = 0.01 
 L = 0.02 
 H = 0.02 
@@ -19,6 +20,7 @@ x = 0.1
 R = 0
 E= 10000
 Def = 0
+Tensao = 0
 
 d = 0.1
 LG = 0.2
@@ -53,7 +55,8 @@ for cont in range(0, 20):
     Def = ((L-(L+R))/L,(H-(H - R))/H, (W-(W+2*(R)))/W)
     Defy = (H-(H - R))/H
     #print(Defy)
-    Tensao = E*Defy*exp(-5*E)
+    from math import expm1
+    Tensao = E*Defy*expm1(-5*E)
     print(Tensao)
     EBox = label(pos = vec(0, 0.06, 0), text = 'Deformacao = %1.2f' %(Defy))
     EBox = label(pos = vec(0.06, 0.06, 0), text = 'Tensao = %1.2f N' %(Tensao))
