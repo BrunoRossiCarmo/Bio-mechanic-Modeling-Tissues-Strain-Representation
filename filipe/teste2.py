@@ -7,7 +7,7 @@ Created on Wed Sep 16 01:00:06 2020
 
 from numpy import *
 from vpython import *
-import matplotlib.pyplot as plt #import matplotlib library
+import matplotlib.pyplot as plt 
 from drawnow import *
 import time
 from math import*
@@ -30,9 +30,6 @@ ground = box(pos = vector(0, -0.01, 0), size = vector(LG, 0.002, d));
 
 block = box(pos = vector(-(LG/2)+x, H, W), size = vector(L, H, W), color = color.blue, axis=vector(0,0,0));
 cylinderO = cylinder(pos = vector(-(LG/2)+x, H-0.01, W), size = vector(1.5*L, 1.5*H, 1.5*W), color = color.orange, axis=vector(0,1,0));
-#arrow1 = arrow(pos = vector(-(LG/3)+x, H+0.01, W), size = vector(L, H, W), color = color.red);
-
-
 
 tenPA = []
 Deform = []
