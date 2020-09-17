@@ -37,7 +37,6 @@ S = 0               #Stress
 I = H           #Posição Inicial
 Ly = I          #Deslocamento pelo eixo Y.
 
-canvas()
 # Definindo o material (bloco).
 bloco = box(pos = vector(0, 0, 0), size = vector(L, H, W), color = color.red);
 
@@ -101,16 +100,3 @@ for cont in range(0, 18):
     
     # Representar a movimentação de modo devagar
     time.sleep(0.005)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
