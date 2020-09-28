@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[81]:
-
-
-
 from vpython import *
 from numpy import *
 import matplotlib.pyplot as plt
@@ -95,16 +88,3 @@ for cont in range(0, 100):
     
     # Representar a movimentação de modo devagar
     time.sleep(0.005)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
